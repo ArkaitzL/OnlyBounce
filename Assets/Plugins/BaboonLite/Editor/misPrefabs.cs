@@ -7,7 +7,7 @@ namespace BaboOnLite {
         // En MenuItem añade: "GameObject/UI/BaboOnLite/" + "TuCarpeta"   //
         // En ElementoCanvas añade: "TuCarpeta/" + "TuPrefab.prefab"      //
         //----------------------------------------------------------------//
-
+        
         //CANVAS
         [MenuItem("GameObject/UI/BaboOnLite/Canvas")]
         private static void InstanciarCanva(MenuCommand menuCommand)

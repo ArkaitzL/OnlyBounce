@@ -73,12 +73,14 @@ namespace BaboOnLite
         public bool estado = true;
         public int volumen = 100;
     }
+#if UNITY_EDITOR
     [Serializable]
     public class AutoPlay
     {
         public string musica = "";
         public SceneAsset escena;
     }
+#endif
     [Serializable]
     public class SonidosCreados {
         public AudioSource sonido;

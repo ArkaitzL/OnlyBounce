@@ -8,7 +8,7 @@ namespace BaboOnLite {
     public class Prefabs
     {
         //Ruta de la carpeta prefab dentro de BaboonLite
-        private static string ruta_carpeta = "/";
+        private static string ruta_carpeta = "/Prefabs/";
 
         public static GameObject Elemento(string nombre) 
         {
@@ -19,7 +19,7 @@ namespace BaboOnLite {
             {
                 //Busca la ruta
                 string ruta = AssetDatabase.GUIDToAssetPath(
-                    AssetDatabase.FindAssets("Prefabs")[0]
+                    AssetDatabase.FindAssets("BaboonLite")[0]
                 ) + ruta_carpeta;
 
                 ruta.Log();
