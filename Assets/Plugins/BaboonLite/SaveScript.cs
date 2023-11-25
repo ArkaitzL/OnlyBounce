@@ -16,7 +16,7 @@ namespace BaboOnLite
         };
         //Skins
         public int dinero = 0;
-        public List<int> listaSkin = new();
-        public miSkin2D miSkin2D; //Skin2D
+        [HideInInspector] public List<int> listaSkin = new();
+        [HideInInspector] public miSkin2D miSkin2D; //Skin2D
     }
 }

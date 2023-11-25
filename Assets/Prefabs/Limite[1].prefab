@@ -187,10 +187,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4002245110220509398, guid: 9bb9ffcdac3d9df42886c95bd7a451ed, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Limite
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 7589732483477680619, guid: 9bb9ffcdac3d9df42886c95bd7a451ed, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 1095128662277872999, guid: 9bb9ffcdac3d9df42886c95bd7a451ed, type: 3}
