@@ -7,7 +7,7 @@ namespace BaboOnLite
     [DefaultExecutionOrder(0)]
     [AddComponentMenu("BaboOnLite/MenuUI")]
     [DisallowMultipleComponent]
-    [HelpURL("https://docs.google.com/document/d/1zPv7QP-ZyisadG5zREiMmzV7UWsYTUPZIPT0f_YlhSE/edit?usp=sharing")]
+    [HelpURL("https://www.notion.so/BaboOnLite-c6252ac92bbc4f8ea231b1276008c13a?pvs=4")]
 
     public class MenuUI : MonoBehaviour
     {

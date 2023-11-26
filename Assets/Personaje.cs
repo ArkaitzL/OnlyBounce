@@ -69,7 +69,7 @@ public class Personaje : MonoBehaviour
         //Dinero
         if (collision.tag == "Dinero")
         {
-            //Save.Data.dinero+=1;
+            Save.Data.dinero += 1;
             Destroy(collision.gameObject);
             //Animacion dinero coger ***
             Debug.Log("Dinero: +1");

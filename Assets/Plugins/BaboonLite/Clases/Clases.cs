@@ -67,31 +67,29 @@ namespace BaboOnLite
 
     //Clases que se usan en la ventana de SONIDOS
     #region sonidos
-    [Serializable]
-    public class Sonido
-    {
-        public bool estado = true;
-        public int volumen = 100;
-    }
-#if UNITY_EDITOR
-    [Serializable]
-    public class AutoPlay
-    {
-        public string musica = "";
-        public SceneAsset escena;
-    }
-#endif
-    [Serializable]
-    public class SonidosCreados {
-        public AudioSource sonido;
-        public bool inmortal;
+    //[Serializable]
+    //public class Sonido
+    //{
+    //    public bool estado = true;
+    //    public int volumen = 100;
+    //}
+    //[Serializable]
+    //public class AutoPlay
+    //{
+    //    public string musica = "";
+    //    public SceneAsset escena;
+    //}
+    //[Serializable]
+    //public class SonidosCreados {
+    //    public AudioSource sonido;
+    //    public bool inmortal;
 
-        public SonidosCreados(AudioSource sonido, bool inmortal)
-        {
-            this.sonido = sonido;
-            this.inmortal = inmortal;
-        }
-    }
+    //    public SonidosCreados(AudioSource sonido, bool inmortal)
+    //    {
+    //        this.sonido = sonido;
+    //        this.inmortal = inmortal;
+    //    }
+    //}
     #endregion
 
     //Clases que se usan en el componenete SKINS
