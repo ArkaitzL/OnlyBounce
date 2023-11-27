@@ -22,8 +22,6 @@ namespace BaboOnLite {
                     AssetDatabase.FindAssets("BaboonLite")[0]
                 ) + ruta_carpeta;
 
-                ruta.Log();
-
                 //Lo crea
                 GameObject prefab = AssetDatabase.LoadAssetAtPath<GameObject>(ruta + nombre);
                 if (prefab == null)

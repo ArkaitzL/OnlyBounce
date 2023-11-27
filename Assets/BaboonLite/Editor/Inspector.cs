@@ -36,6 +36,8 @@ namespace BaboOnLite {
 
             //Añade datos extras en el inspector
             #region inspector
+            EditorGUILayout.Space(10);
+
             Save save = (Save)target;
 
             serializedObject.Update();

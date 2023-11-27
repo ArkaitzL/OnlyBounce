@@ -29,6 +29,8 @@ namespace BaboOnLite
             {
                 Advertisement.Initialize(gameID, testMode, this);
             }
+
+            Instanciar<Inicializar>.Singletons(this, gameObject);
         }
 
         //FUNCIONES DE UNITYADS

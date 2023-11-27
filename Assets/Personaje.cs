@@ -8,13 +8,21 @@ public class Personaje : MonoBehaviour
 {
     [SerializeField] private float velocidad_horizontal, velocidad_vertical;
     [SerializeField] private Potenciador potenciador;
+
     private Vector2 direccion;
+
     private Mundo mundo;
+    private Controlador controlador;
 
     private void Start()
     {
+        //Equipa la skin
+        if (Save.Data.miSkin2D.imagen != null) GetComponent<SpriteRenderer>().sprite = Save.Data.miSkin2D.imagen;
+
         //Coge el script de mundo
         mundo = Instanciar<Mundo>.Coger();
+        controlador = Instanciar<Controlador>.Coger();
+
         //Iniciar
         direccion = new((UnityEngine.Random.Range(0, 2) == 0) ? 1 : -1, 0);
     }
@@ -22,10 +30,10 @@ public class Personaje : MonoBehaviour
     void Update()
     {
         //Horizontal
-        transform.Translate(Time.deltaTime * velocidad_horizontal * direccion);
+        if(!controlador.muerto) transform.Translate(Time.deltaTime * velocidad_horizontal * direccion);
 
         //Vertical
-        if (Input.GetMouseButton(0))
+        if (!controlador.muerto && Input.GetMouseButton(0))
         {
             transform.Translate(Time.deltaTime * velocidad_vertical * Vector2.up);
         }
@@ -45,8 +53,13 @@ public class Personaje : MonoBehaviour
         //Muerte
         if (collision.tag == "Muerte")
         {
-            Time.timeScale = 0;
-            Debug.Log("Muerto");
+            //Animacion muerte ***
+            controlador.muerto = true;
+
+            gameObject.SetActive(false);
+            transform.position = new(0, transform.position.y);
+
+            controlador.Muerto();
         }
         //Detector
         if (collision.tag == "Detector")
@@ -59,7 +72,9 @@ public class Personaje : MonoBehaviour
         {
             if (ControladorBG.Esperando("potenciado"))
             {
-                ControladorBG.IniciarEspera("potenciado", potenciador.duracion);
+                //Animacion Potenciador ***
+
+                ControladorBG.IniciarEspera("potenciado", potenciador.duracion-.2f);
                 ControladorBG.Mover(transform, new Movimiento(
                     potenciador.duracion,
                     transform.position.Y(potenciador.distancia), potenciador.animacion)
@@ -69,10 +84,9 @@ public class Personaje : MonoBehaviour
         //Dinero
         if (collision.tag == "Dinero")
         {
-            Save.Data.dinero += 1;
+            controlador.dinero += 1;
             Destroy(collision.gameObject);
             //Animacion dinero coger ***
-            Debug.Log("Dinero: +1");
         }
     }
 

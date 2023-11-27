@@ -5,9 +5,16 @@ using BaboOnLite;
 
 public class Enemigo : MonoBehaviour
 {
-    [SerializeField] private float velocidad;
+    [SerializeField] private Transform personaje;
+    [SerializeField] public float velocidad;
+    [SerializeField] private int distancia = 15;
 
     private Mundo mundo;
+
+    private void Awake()
+    {
+        Instanciar<Enemigo>.Añadir(this);
+    }
 
     void Start()
     {
@@ -20,6 +27,13 @@ public class Enemigo : MonoBehaviour
 
     void Update()
     {
+        //Se mueve
         transform.Translate(Time.deltaTime * velocidad * Vector2.up);
+
+        //Se TPa debajo del jugador
+        if (personaje.position.y > transform.position.y + distancia)
+        {
+            transform.position = new(transform.position.x, personaje.position.y - distancia);
+        }
     }
 }
