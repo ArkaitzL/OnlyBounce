@@ -82,7 +82,7 @@ public class Controlador : MonoBehaviour
 
     public void Revivir() 
     {
-        Anuncios.verRewarded(() => {
+        Anuncios.verRewardedRecompensa(() => {
             //Activa componentes
             puntos_txt.enabled = true;
             personaje.gameObject.SetActive(true);
@@ -106,23 +106,36 @@ public class Controlador : MonoBehaviour
 
     public void Multiplicador() 
     {
-        Anuncios.verRewarded(() =>
+        Anuncios.verRewardedRecompensa(() =>
         {
             Terminar(2);
+            SceneManager.LoadScene("Menu");
         });
     }
 
-    public void Terminar(int multiplicador) 
+    public void Continuar() 
+    {
+        Terminar(1);
+
+        if (puntos < 150) {
+            SceneManager.LoadScene("Menu");
+            return;
+        }
+        Anuncios.verInterstitialRecompensa(() =>
+        {
+            SceneManager.LoadScene("Menu");
+        });
+    }
+
+    private void Terminar(int multiplicador) 
     {
         Save.Data.dinero += Total() * multiplicador;
         Mejor();
-        SceneManager.LoadScene("Menu");
     }
 
     private void OnApplicationQuit()
     {
-        Save.Data.dinero += Total();
-        Mejor();
+        Terminar(1);
     }
 
     private void Mejor() 

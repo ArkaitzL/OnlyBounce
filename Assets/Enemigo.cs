@@ -31,9 +31,7 @@ public class Enemigo : MonoBehaviour
         transform.Translate(Time.deltaTime * velocidad * Vector2.up);
 
         //Se TPa debajo del jugador
-        if (personaje.position.y > transform.position.y + distancia)
-        {
-            transform.position = new(transform.position.x, personaje.position.y - distancia);
-        }
+        float nuevaPosY = Mathf.Max(personaje.position.y - distancia, transform.position.y);
+        transform.position = new Vector2(transform.position.x, nuevaPosY);
     }
 }
