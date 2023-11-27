@@ -8,6 +8,7 @@ public class Personaje : MonoBehaviour
 {
     [SerializeField] private float velocidad_horizontal, velocidad_vertical;
     [SerializeField] private Potenciador potenciador;
+    [SerializeField] private GameObject muerte;
 
     private Vector2 direccion;
 
@@ -53,7 +54,8 @@ public class Personaje : MonoBehaviour
         //Muerte
         if (collision.tag == "Muerte")
         {
-            //Animacion muerte ***
+            Instantiate(muerte, transform.position, Quaternion.identity);
+
             controlador.muerto = true;
 
             gameObject.SetActive(false);

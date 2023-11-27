@@ -17,6 +17,7 @@ public partial class SaveScript
     public int dinero = 0;
     public int mejor_puntuacion;
     public bool iniciado;
+    public bool muteado;
 
     //Skin
     public List<int> listaSkin = new();

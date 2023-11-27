@@ -1596,6 +1596,7 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
+  muerte: {fileID: 8434216507118815752, guid: 63240e4de4a302b45900ca6261259ebb, type: 3}
 --- !u!1 &893876283
 GameObject:
   m_ObjectHideFlags: 0
