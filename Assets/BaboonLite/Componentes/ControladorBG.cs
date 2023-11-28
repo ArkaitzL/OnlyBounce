@@ -15,6 +15,9 @@ namespace BaboOnLite
     //VARIABLES
     public partial class ControladorBG
     {
+        //PUBLICOS
+        [SerializeField] private int fpsLimite = 90;
+
         //DELEGADOS
 
         //Creacion de delegados
@@ -80,6 +83,12 @@ namespace BaboOnLite
             IniciarEspera = iniciarEspera;
             Esperando = esperando;
             #endregion 
+        }
+
+        private void Start()
+        {
+            //Limite FPS
+            Application.targetFrameRate = fpsLimite;
         }
 
         //Rutina que espera x tiempo para llamar a tu funcion

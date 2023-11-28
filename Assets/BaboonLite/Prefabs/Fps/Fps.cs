@@ -12,15 +12,11 @@ namespace BaboOnLite
 
     public partial class Fps {
         [SerializeField] private TextMeshProUGUI fpsText;
-        [SerializeField] private int fpsLimite = 90;
     }
     public partial class Fps : MonoBehaviour
     {
         void Start()
         {
-            //Limite
-            Application.targetFrameRate = fpsLimite;
-
             //Contador FPS
             List<int> media = new List<int>();
             ControladorBG.Rutina(.01f, () => {

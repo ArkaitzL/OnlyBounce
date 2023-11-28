@@ -273,6 +273,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fps
       objectReference: {fileID: 0}
+    - target: {fileID: 8094826423106122336, guid: 02ae555746b4493469be443413b0ce61, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8318025808246109400, guid: 02ae555746b4493469be443413b0ce61, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2311,6 +2315,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92e2e545844bad641905992c0bf5c5aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fpsLimite: 90
 --- !u!4 &1355942411
 Transform:
   m_ObjectHideFlags: 0
