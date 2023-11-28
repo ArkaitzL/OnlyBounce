@@ -7,8 +7,6 @@ using UnityEngine.UI;
 public class Musica : MonoBehaviour
 {
     [SerializeField] private AudioClip sonido;
-    [SerializeField] private Image imagen;
-    [SerializeField] private Sprite desmuteado, muteado;
 
     private AudioSource audio_source;
 
@@ -24,19 +22,10 @@ public class Musica : MonoBehaviour
 
         audio_source.loop = true;
         audio_source.Play();
-
-        Aplicar();
     }
 
-    public void Mutear()
-    {
-        Save.Data.muteado = !Save.Data.muteado;
-        Aplicar();
-    }
-
-    private void Aplicar()
+    public void Cambiar()
     {
         audio_source.mute = Save.Data.muteado;
-        imagen.sprite = (Save.Data.muteado) ? muteado : desmuteado;
     }
 }

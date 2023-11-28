@@ -656,8 +656,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1678986126}
-        m_TargetAssemblyTypeName: Musica, Assembly-CSharp
+      - m_Target: {fileID: 1589232334}
+        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
         m_MethodName: Mutear
         m_Mode: 1
         m_Arguments:
@@ -1463,6 +1463,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mejor_txt: {fileID: 1327406809}
+  imagen: {fileID: 575537562}
+  desmuteado: {fileID: 21300000, guid: 2b6111cc369993549966e6334af88c62, type: 3}
+  muteado: {fileID: 21300000, guid: 9fe836e9dafb4ea47bf2ca940d93c54d, type: 3}
 --- !u!1 &1670804913
 GameObject:
   m_ObjectHideFlags: 0
@@ -1626,9 +1629,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sonido: {fileID: 8300000, guid: e8d776708c3e0ef43b803126dc4a5031, type: 3}
-  imagen: {fileID: 575537562}
-  desmuteado: {fileID: 21300000, guid: 2b6111cc369993549966e6334af88c62, type: 3}
-  muteado: {fileID: 21300000, guid: 9fe836e9dafb4ea47bf2ca940d93c54d, type: 3}
 --- !u!4 &1678986127
 Transform:
   m_ObjectHideFlags: 0
