@@ -75,9 +75,9 @@ public class Controlador : MonoBehaviour
         //Menu muerte
         menu_muerte.SetActive(true);
         muerte_txt.text =    $"Puntos x{puntos}\t\t{(int)puntos/10}$\n" +
-                                    $"Dinero\t\t\t{dinero}$" +
-                                    $"\n___________________" +
-                                    $"\nTotal\t\t\t{Total()}$"; ;
+                             $"Dinero x{dinero}\t\t{dinero*3}$" +
+                             $"\n___________________" +
+                             $"\nTotal\t\t\t{Total()}$"; ;
     }
 
     public void Revivir() 
@@ -140,11 +140,11 @@ public class Controlador : MonoBehaviour
 
     private void Mejor() 
     {
-        if (Total() > Save.Data.mejor_puntuacion)
+        if (puntos > Save.Data.mejor_puntuacion)
         {
-            Save.Data.mejor_puntuacion = Total();
+            Save.Data.mejor_puntuacion = puntos;
         }
     }
 
-    private int Total() => dinero + ((int)puntos / 10);
+    private int Total() => (dinero * 3) + ((int)puntos / 10);
 }

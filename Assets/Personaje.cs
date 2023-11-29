@@ -18,7 +18,7 @@ public class Personaje : MonoBehaviour
     private void Start()
     {
         //Equipa la skin
-        if (Save.Data.miSkin2D.imagen != null) GetComponent<SpriteRenderer>().sprite = Save.Data.miSkin2D.imagen;
+        if (Save.Data.miSkin2D.imagen != null) GetComponent<SpriteRenderer>().sprite = Save.Data?.miSkin2D?.imagen;
 
         //Coge el script de mundo
         mundo = Instanciar<Mundo>.Coger();
@@ -87,8 +87,9 @@ public class Personaje : MonoBehaviour
         if (collision.tag == "Dinero")
         {
             controlador.dinero += 1;
+            //collision.GetComponent<BoxCollider2D>().enabled = false;
+            //ControladorBG.ColorSpriteRender(collision.GetComponent<SpriteRenderer>(), new Color(34 / 255, 34 / 255, 34 / 255, 0), .1f);
             Destroy(collision.gameObject);
-            //Animacion dinero coger ***
         }
     }
 

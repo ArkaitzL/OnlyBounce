@@ -460,7 +460,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8975739405213437786, guid: 19a2c2a0d2e680a49b69013c94b5c0e3, type: 3}
       propertyPath: colores.bloqueo.rgba
-      value: 6645093
+      value: 4280427042
       objectReference: {fileID: 0}
     - target: {fileID: 8975739405213437786, guid: 19a2c2a0d2e680a49b69013c94b5c0e3, type: 3}
       propertyPath: skins.Array.data[1].id
@@ -480,7 +480,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8975739405213437786, guid: 19a2c2a0d2e680a49b69013c94b5c0e3, type: 3}
       propertyPath: skins.Array.data[5].id
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8975739405213437786, guid: 19a2c2a0d2e680a49b69013c94b5c0e3, type: 3}
       propertyPath: colores.botonSalir.rgba
@@ -540,7 +540,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8975739405213437786, guid: 19a2c2a0d2e680a49b69013c94b5c0e3, type: 3}
       propertyPath: colores.tarjeta.fondoSkin.rgba
-      value: 4289440683
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 8975739405213437786, guid: 19a2c2a0d2e680a49b69013c94b5c0e3, type: 3}
       propertyPath: colores.tarjeta.fondoPrecio.rgba

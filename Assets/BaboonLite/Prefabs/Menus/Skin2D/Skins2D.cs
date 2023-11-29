@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -23,7 +24,7 @@ namespace BaboOnLite
         [Header("Skins:")]
         [SerializeField] private Skin2D[] skins;
 
-        private Image seleccionada;
+        private GameObject seleccionado;
         private float tamaño = 450f; //Tamaño de separacion entre skins
 
         private void Start()
@@ -55,9 +56,9 @@ namespace BaboOnLite
             foreach (var skin in skins)
             {
                 /*
-                 * 0.- Imagen
-                 * 1.- Precio
-                 * 2.- Bloqueo
+                 * 0.- Seleccion
+                 * 1.- Imagen
+                 * 2.- Precio
                  * 3.- Boton
                  */
 
@@ -81,7 +82,7 @@ namespace BaboOnLite
                 //Añade el contenido
                 Datos(skinOBJ, skin);
 
-                //4.-Boton
+                //3.-Boton
                 skinOBJ.GetChild(3).GetComponent<Button>().onClick.AddListener(() =>
                 {
                     if (skin.desbloqueado)
@@ -90,10 +91,9 @@ namespace BaboOnLite
                         Save.Data.miSkin2D.id = skin.id;
                         Save.Data.miSkin2D.imagen = skin.imagen;
 
-                        if(seleccionada != null) seleccionada.color = colores.tarjeta.fondoSkin;
-                        Image fondoSkin = skinOBJ.GetChild(0).GetComponent<Image>();
-                        fondoSkin.color = colores.seleccionado;
-                        seleccionada = fondoSkin;
+                        seleccionado.SetActive(false);
+                        skinOBJ.GetChild(0).gameObject.SetActive(true);
+                        seleccionado = skinOBJ.GetChild(0).gameObject;
                     }
                     else
                     {
@@ -108,20 +108,19 @@ namespace BaboOnLite
             //Imprime los datos en las tarjetas
             #region datos
             //1.-Imagen
-            skinOBJ.GetChild(0).GetChild(0).GetComponent<Image>().sprite = skin.imagen;
+            skinOBJ.GetChild(1).GetChild(0).GetComponent<Image>().sprite = skin.imagen;
             //Fondo
-            Image fondo = skinOBJ.GetChild(0).GetComponent<Image>();
-            if (skin.id == Save.Data.miSkin2D.id)
+            Image fondo = skinOBJ.GetChild(1).GetComponent<Image>();
+            if (skin.id == Save.Data.miSkin2D.id) 
             {
-                fondo.color = colores.seleccionado;
-                seleccionada = fondo;
-            }
-            else {
-                fondo.color = colores.tarjeta.fondoSkin;
+                skinOBJ.GetChild(0).gameObject.SetActive(true);
+                seleccionado = skinOBJ.GetChild(0).gameObject;
             }
 
+            fondo.color = colores.tarjeta.fondoSkin;
+
             //2.-Precio
-            Transform precio = skinOBJ.GetChild(1);
+            Transform precio = skinOBJ.GetChild(2);
             precio.GetComponent<Image>().color = colores.tarjeta.fondoPrecio;
             if (skin.desbloqueado)
             {
@@ -140,9 +139,8 @@ namespace BaboOnLite
                     textoPrecio.color = new Color(149 / 255f, 61 / 255f, 61 / 255f);
                 }
             }
-            //3.-Bloqueo
-            skinOBJ.GetChild(2).gameObject.SetActive(!skin.desbloqueado);
-            skinOBJ.GetChild(2).GetComponent<Image>().color = colores.bloqueo;
+            //3.-Seleccion
+            skinOBJ.GetChild(0).GetComponent<Image>().color = colores.bloqueo;
             #endregion
         }
 

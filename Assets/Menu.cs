@@ -19,12 +19,12 @@ public class Menu : MonoBehaviour
     public void Mutear()
     {
         Save.Data.muteado = !Save.Data.muteado;
-        Instanciar<Musica>.Coger().Cambiar();
         Aplicar();
     }
 
     private void Aplicar()
     {
+        Instanciar<Musica>.Coger().Cambiar();
         imagen.sprite = (Save.Data.muteado) ? muteado : desmuteado;
     }
 }

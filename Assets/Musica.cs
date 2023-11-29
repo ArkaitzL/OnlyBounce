@@ -13,10 +13,7 @@ public class Musica : MonoBehaviour
     private void Awake()
     {
         Instanciar<Musica>.Singletons(this, gameObject);
-    }
 
-    private void Start()
-    {
         audio_source = gameObject.AddComponent<AudioSource>();
         audio_source.clip = sonido;
 
