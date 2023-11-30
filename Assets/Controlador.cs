@@ -116,15 +116,7 @@ public class Controlador : MonoBehaviour
     public void Continuar() 
     {
         Terminar(1);
-
-        if (puntos < 150) {
-            SceneManager.LoadScene("Menu");
-            return;
-        }
-        Anuncios.verInterstitialRecompensa(() =>
-        {
-            SceneManager.LoadScene("Menu");
-        });
+        SceneManager.LoadScene("Menu");
     }
 
     private void Terminar(int multiplicador) 
