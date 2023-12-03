@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 public class Controlador : MonoBehaviour
 {
     [Header("Referencias")]
+    [SerializeField] private Transform salvador;
     [SerializeField] private Transform personaje;
     [SerializeField] private GameObject enemigo, menu_muerte, tutorial;
     [SerializeField] private TextMeshProUGUI muerte_txt, puntos_txt;
@@ -64,6 +65,11 @@ public class Controlador : MonoBehaviour
         }
     }
 
+    public void Salvar(float posY) 
+    {
+        salvador.position = new(0, posY);
+    }
+
     public void Muerto() 
     {
         muerto = true;
@@ -83,6 +89,9 @@ public class Controlador : MonoBehaviour
     public void Revivir() 
     {
         Anuncios.verRewardedRecompensa(() => {
+            //Te salva
+            Salvar(personaje.transform.position.y);
+
             //Activa componentes
             puntos_txt.enabled = true;
             personaje.gameObject.SetActive(true);

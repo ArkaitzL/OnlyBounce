@@ -74,8 +74,10 @@ public class Personaje : MonoBehaviour
         {
             if (ControladorBG.Esperando("potenciado"))
             {
-                //Animacion Potenciador ***
+                //Te salva de morir
+                controlador.Salvar(transform.position.y + potenciador.distancia);
 
+                //Lo hace
                 ControladorBG.IniciarEspera("potenciado", potenciador.duracion-.2f);
                 ControladorBG.Mover(transform, new Movimiento(
                     potenciador.duracion,
